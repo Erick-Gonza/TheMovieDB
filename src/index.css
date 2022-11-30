@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bodyColor: "#000000";
+}
+body {
+  background-color: var(--bodyColor);
+}
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
