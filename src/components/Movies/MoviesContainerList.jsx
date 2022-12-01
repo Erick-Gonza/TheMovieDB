@@ -20,23 +20,25 @@ const MoviesContainerList = ({ isPreview }) => {
           <section key={movie?.id} className="relative">
             <Link
               to={`/movies/${movie.id}`}
-              className="w-full lg:w-1/5 flex flex-col justify-center items-center bg-gray-800 px-3 py-4 rounded-xl mt-4 lg:m-2"
+              className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
             >
-              <section>
+              <section className="relative">
+                <h2 className="text-left text-text font-semibold absolute bottom-1 left-1">
+                  {movie.title}
+                </h2>
                 <img
-                  src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  src={`http://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
                   alt=""
                   className="rounded-lg"
                 />
-                <h2 className="text-center">{movie.title}</h2>
               </section>
             </Link>
             <Button
               className={
-                "text-yellow-500 absolute right-5 top-7 px-1 py-1 rounded-full bg-white z-20"
+                "text-yellow-500 absolute right-2 top-2 px-1 py-1 rounded-full bg-main/50 z-20"
               }
               onClick={() => handleFav(movie)}
-              text={<RiStarSFill className="text-3xl" />}
+              text={<RiStarSFill className="text-xl" />}
             />
           </section>
         );
@@ -52,12 +54,14 @@ const MoviesContainerList = ({ isPreview }) => {
             key={movie?.id}
           >
             <section>
+              <h2 className="text-left text-text font-semibold">
+                {movie.title}
+              </h2>
               <img
                 src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt=""
                 className="rounded-lg"
               />
-              <h2 className="text-center">{movie.title}</h2>
             </section>
             <Button
               className={

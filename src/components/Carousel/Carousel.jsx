@@ -6,8 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Carousel.css";
-import Button from "../Button/button";
-import { RiStarSFill } from "react-icons/ri";
+import { isMobile } from "react-device-detect";
 
 const Carousel = ({ url, slides }) => {
   const { data } = useFetch(url);
@@ -31,18 +30,15 @@ const Carousel = ({ url, slides }) => {
       >
         {data?.results.map((e) => {
           return (
-            <>
-              <SwiperSlide key={e?.id} className="relative">
+            <SwiperSlide key={e?.id} className="relative">
+              {isMobile ? (
                 <img src={`http://image.tmdb.org/t/p/w500/${e?.poster_path}`} />
-              </SwiperSlide>
-              <Button
-                className={
-                  "text-yellow-500 absolute right-5 top-7 px-1 py-1 rounded-full bg-white"
-                }
-                onClick={() => handleFav(movie)}
-                text={<RiStarSFill className="text-3xl" />}
-              />
-            </>
+              ) : (
+                <img
+                  src={`http://image.tmdb.org/t/p/w500/${e?.backdrop_path}`}
+                />
+              )}
+            </SwiperSlide>
           );
         })}
       </Swiper>

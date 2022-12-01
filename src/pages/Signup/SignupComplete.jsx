@@ -6,7 +6,7 @@ import HeaderPage from "../../components/Header/HeaderPage";
 
 const SignupComplete = () => {
   const navigate = useNavigate();
-  setInitColorTitle("black", "Complete");
+  setInitColorTitle("#191B2A", "Complete");
   const handleComplete = () => {
     navigate("/login");
   };
@@ -15,19 +15,19 @@ const SignupComplete = () => {
     <>
       <HeaderPage />
       <main className="flex flex-grow flex-col px-4 py-2 items-center place-content-center -mt-28 lg:-mt-36">
-        <h2 className="text-white font-bold text-4xl text-center mb-4">
+        <h2 className="text-text font-bold text-4xl text-center mb-4">
           Account Created
         </h2>
         {isMobile ? (
-          <AiFillCheckCircle className="text-red" size={200} />
+          <AiFillCheckCircle className="text-secondary" size={200} />
         ) : (
-          <AiFillCheckCircle className="text-red" size={150} />
+          <AiFillCheckCircle className="text-secondary" size={150} />
         )}
 
         <button
           onClick={handleComplete}
           type="submit"
-          className="text-white bg-red font-medium rounded-lg text-lg  w-1/2 px-5 py-3 text-center mt-4 mb-4 lg:text-2xl lg:w-1/6 "
+          className="text-text bg-secondary font-medium rounded-lg text-lg  w-1/2 px-5 py-3 text-center mt-4 mb-4 lg:text-2xl lg:w-1/6 "
         >
           Continue
         </button>

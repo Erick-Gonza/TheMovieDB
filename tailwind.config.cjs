@@ -5,7 +5,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        red: "#ED1B24",
+        main: "#191B2A",
+        secondary: "#902913",
+        text: "#F6F6F6",
+        paragraph: "#E1E1E1",
       },
     },
     plugins: [],

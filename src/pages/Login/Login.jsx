@@ -9,7 +9,7 @@ const Login = () => {
   const { user } = useContext(userContext);
   const handleSignup = useNavigation("/signup");
   const handleHome = useNavigation("/home");
-  setInitColorTitle("black", "Login");
+  setInitColorTitle("#191B2A", "Login");
   const { inputEmail, inputPassword } = useInputRef();
   const data = { ...user };
   const userStorage = JSON.parse(sessionStorage.getItem("user"));
@@ -45,7 +45,7 @@ const Login = () => {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block mb-2 text-lg font-medium text-white"
+              className="block mb-2 text-lg font-medium text-text"
             >
               Email:
             </label>
@@ -53,7 +53,7 @@ const Login = () => {
               ref={inputEmail}
               type="email"
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md block w-full px-3 py-4"
+              className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-md block w-full px-3 py-4"
               placeholder="example@email.com"
               required
             />
@@ -62,7 +62,7 @@ const Login = () => {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block mb-2 text-lg font-medium text-white"
+              className="block mb-2 text-lg font-medium text-text"
             >
               Password:
             </label>
@@ -70,7 +70,7 @@ const Login = () => {
               ref={inputPassword}
               type="password"
               id="password"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md block w-full px-3 py-4"
+              className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-md block w-full px-3 py-4"
               placeholder="Write your password here"
               required
             />
@@ -78,7 +78,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="text-white bg-red font-medium rounded-lg text-lg w-full px-5 py-3 text-center mt-4"
+            className="text-text bg-secondary font-medium rounded-lg text-xl w-full px-5 py-3 text-center mt-4"
           >
             Login
           </button>
@@ -87,7 +87,10 @@ const Login = () => {
           <p className="text-white inline mr-5 font-bold">
             Dont have an account?
           </p>
-          <button className="text-red font-bold" onClick={handleSignupR}>
+          <button
+            className="text-secondary font-bold text-lg"
+            onClick={handleSignupR}
+          >
             Signup
           </button>
         </section>
