@@ -4,7 +4,7 @@ import Button from "../../components/Button/button";
 import { userContext } from "../../context/UserContext";
 import { setInitColorTitle } from "../../utils/Utilities";
 import HeaderPage from "../../components/Header/HeaderPage";
-import Carousel from "./Carousel";
+import Carousel from "../../components/Carousel/Carousel";
 
 const Welcome = () => {
   setInitColorTitle("black", "Welcome");
@@ -31,7 +31,12 @@ const Welcome = () => {
     <>
       <HeaderPage />
       <main className="h-auto flex-grow relative">
-        <Carousel className="-z-10" />
+        <Carousel
+          className="-z-10"
+          url={
+            "https://api.themoviedb.org/3/trending/all/day?api_key={API_KEY}"
+          }
+        />
         <section className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 z-10">
           <Button
             className={
