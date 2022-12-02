@@ -13,7 +13,7 @@ const SerieDetail = () => {
     <>
       <Header />
       <main className="w-full h-screen dark:bg-white">
-        <section className="w-full h-96 bg-gradient-to-b from-[#ffffff8f] to-[#191B2A] relative dark:from-[#0808088f] dark:to-[#080808d5]">
+        <section className="w-full h-96 lg:h-[38rem] bg-gradient-to-b from-[#ffffff8f] to-[#191B2A] relative dark:from-[#0808088f] dark:to-[#080808d5]">
           <img
             src={`http://image.tmdb.org/t/p/w500/${data?.poster_path}`}
             className="rounded-sm object-cover lg:object-contain w-full h-full mix-blend-overlay blur-[0.5px]"

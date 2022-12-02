@@ -86,7 +86,7 @@ const FavContainerList = ({ isPreview }) => {
                 className={
                   "text-yellow-500 absolute right-4 top-8 lg:right-4 lg:top-8 lg:px-2 lg:py-2 px-1 py-1 rounded-full bg-main/50 z-20"
                 }
-                onClick={() => handleFav(movie)}
+                onClick={() => handleFav(trend)}
                 text={<RiStarSFill className="text-xl" />}
               />
             </section>
