@@ -4,6 +4,7 @@ import MoviesContainerList from "../../components/Movies/MoviesContainerList";
 import SeriesContainerList from "../../components/Series/SeriesContainerList";
 import TrendContainerList from "../../components/Trends/TrendContainerList";
 import Carousel from "../../components/Carousel/Carousel";
+import { isMobile } from "react-device-detect";
 
 const HomePage = () => {
   setInitColorTitle("#191B2A", "Home");
@@ -12,13 +13,13 @@ const HomePage = () => {
     <>
       <Header />
       <main className="px-4 py-3 dark:bg-white">
-        <section className="w-full h-20">
+        <section className="w-full h-20 lg:h-40">
           <Carousel
             className="-z-10"
             url={
               "https://api.themoviedb.org/3/trending/all/day?api_key={API_KEY}"
             }
-            slides={3}
+            slides={isMobile ? 3 : 5}
           />
         </section>
 

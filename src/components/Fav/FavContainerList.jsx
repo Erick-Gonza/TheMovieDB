@@ -12,39 +12,41 @@ const FavContainerList = () => {
   };
   return (
     <>
-      {fav?.map((fav) => {
-        return (
-          <section className="relative w-1/2 max-h-1/2 px-2 py-1" key={fav?.id}>
-            <Link
-              to={`/favs/${fav.id}`}
-              className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
-            >
-              <section className="relative">
-                <h2 className="text-center text-lg text-text font-semibold dark:text-black">
-                  {isMobile
-                    ? `${
-                        fav?.title?.substring(0, 15) ||
-                        fav?.name?.substring(0, 15)
-                      }..`
-                    : fav?.title || fav?.name}
-                </h2>
-                <img
-                  src={`http://image.tmdb.org/t/p/w500/${fav.poster_path}`}
-                  alt=""
-                  className="rounded-lg"
-                />
-              </section>
-            </Link>
-            <Button
-              className={
-                "text-white absolute left-3 bottom-2 px-1 py-1 rounded-full bg-secondary z-20"
-              }
-              onClick={() => handleDeleteFav(fav.id)}
-              text={<RiCloseFill className="text-xl" />}
-            />
-          </section>
-        );
-      })}
+      <section className="w-full flex flex-col lg:flex-row lg:flex-wrap justify-center gap-4">
+        {fav?.map((fav) => {
+          return (
+            <section className="relative" key={fav?.id}>
+              <Link
+                to={`/favs/${fav.id}`}
+                className="w-full flex flex-col justify-center items-center mt-4 px-2 py-2"
+              >
+                <section className="relative">
+                  <h2 className="text-left text-text font-semibold absolute bottom-1 left-1 dark:text-black">
+                    {isMobile
+                      ? `${
+                          fav?.title?.substring(0, 15) ||
+                          fav?.name?.substring(0, 15)
+                        }..`
+                      : fav?.title || fav?.name}
+                  </h2>
+                  <img
+                    src={`http://image.tmdb.org/t/p/w500/${fav.poster_path}`}
+                    alt=""
+                    className="rounded-lg lg:h-96"
+                  />
+                </section>
+              </Link>
+              <Button
+                className={
+                  "text-red-700 absolute right-4 top-8 lg:right-4 lg:top-8 lg:px-2 lg:py-2 px-1 py-1 rounded-full bg-main/50 z-20"
+                }
+                onClick={() => handleDeleteFav(fav.id)}
+                text={<RiCloseFill className="text-xl" />}
+              />
+            </section>
+          );
+        })}
+      </section>
     </>
   );
 };

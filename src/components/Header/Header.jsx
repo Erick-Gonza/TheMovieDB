@@ -23,37 +23,55 @@ const Header = () => {
         </Link>
       </div>
       <nav
-        className={`fixed bg-gradient-to-b to-main from-mainbg w-[80%] md:w-[40%] xl:w-full h-full ${
+        className={`fixed bg-gradient-to-b dark:to-text dark:from-[#fefefe] lg:bg-none w-[80%] lg:w-[50%] h-full ${
           showMenu ? "left-0" : "-left-full"
-        } top-0 xl:static flex-1 flex flex-col xl:flex-row items-center justify-center gap-10 transition-all duration-500 z-50`}
+        } top-0 lg:static flex-1 flex flex-col lg:flex-row items-center justify-center gap-6 transition-all duration-500 z-50`}
       >
-        <Link to="/home" className="text-2xl font-bold text-text ">
+        <Link
+          to="/home"
+          className="text-2xl font-bold text-text dark:text-slate-700 p-2"
+        >
           Home
         </Link>
 
-        <Link to="/movies" className="text-2xl font-bold text-text ">
+        <Link
+          to="/movies"
+          className="text-2xl font-bold text-text dark:text-slate-700 p-2"
+        >
           Movies
         </Link>
 
-        <Link to="/series" className="text-2xl font-bold text-text ">
+        <Link
+          to="/series"
+          className="text-2xl font-bold text-text dark:text-slate-700 p-2"
+        >
           Series
         </Link>
 
-        <Link to="/trends" className="text-2xl font-bold text-text ">
+        <Link
+          to="/trends"
+          className="text-2xl font-bold text-text dark:text-slate-700 p-2"
+        >
           Trends
         </Link>
 
-        <Link to="/favs" className="text-2xl font-bold text-text ">
+        <Link
+          to="/favs"
+          className="text-2xl font-bold text-text dark:text-slate-700 p-2"
+        >
           Favorites
         </Link>
 
-        <Link to="/login" className="text-2xl font-bold text-text ">
+        <Link
+          to="/login"
+          className="text-2xl font-bold text-text dark:text-slate-700 p-2"
+        >
           Logout
         </Link>
       </nav>
       <button
         onClick={toggleMenu}
-        className="xl:hidden text-4xl px-2 py-2 text-white fixed top-4 right-4 bg-main bg-gradient-to-b  dark:to-white dark:from-slate-200 rounded-full"
+        className="xl:hidden text-4xl px-2 py-2 text-white fixed top-4 right-4 bg-main bg-gradient-to-b dark:to-white dark:from-slate-200 rounded-full"
       >
         {showMenu ? (
           <RiCloseLine className="text-red dark:text-black" />
@@ -63,12 +81,12 @@ const Header = () => {
       </button>
       <button
         onClick={handleClick}
-        className="absolute top-5 right-20 px-3 py-3 rounded-full"
+        className="absolute top-5 right-20 lg:top-3 lg:right-4 px-3 py-3 lg:px-4 lg:py-4 rounded-full"
       >
         {theme === "dark" ? (
-          <RiMoonClearFill className="text-2xl text-black" />
+          <RiMoonClearFill className="text-2xl lg:text-3xl text-black" />
         ) : (
-          <RiSunFill className="text-2xl text-white" />
+          <RiSunFill className="text-2xl lg:text-3xl text-white" />
         )}
       </button>
     </header>
