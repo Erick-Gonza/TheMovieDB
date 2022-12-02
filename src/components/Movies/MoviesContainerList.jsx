@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch";
 import { RiStarSFill } from "react-icons/ri";
 import Button from "../Button/button";
 import { favContext } from "../../context/FavContext";
+import { isMobile } from "react-device-detect";
 
 const MoviesContainerList = ({ isPreview }) => {
   const { addToFavs } = useContext(favContext);
@@ -48,29 +49,35 @@ const MoviesContainerList = ({ isPreview }) => {
     <>
       {data?.results?.map((movie) => {
         return (
-          <Link
-            to={`/movies/${movie.id}`}
-            className="w-full lg:w-1/5 flex flex-col justify-center items-center bg-gray-800 px-3 py-4 rounded-xl mt-4 lg:m-2 relative"
+          <section
+            className="relative w-1/2 max-h-1/2 px-2 py-1"
             key={movie?.id}
           >
-            <section>
-              <h2 className="text-left text-text font-semibold">
-                {movie.title}
-              </h2>
-              <img
-                src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt=""
-                className="rounded-lg"
-              />
-            </section>
+            <Link
+              to={`/movies/${movie.id}`}
+              className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
+            >
+              <section className="relative">
+                <h2 className="text-center text-lg text-text font-semibold">
+                  {isMobile
+                    ? `${movie.title.substring(0, 15)}...`
+                    : movie.title}
+                </h2>
+                <img
+                  src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt=""
+                  className="rounded-lg"
+                />
+              </section>
+            </Link>
             <Button
               className={
-                "text-yellow-500 absolute right-5 top-7 px-1 py-1 rounded-full bg-white"
+                "text-yellow-500 absolute left-3 bottom-2 px-2 py-2 rounded-full bg-mainbg z-20"
               }
               onClick={() => handleFav(movie)}
-              text={<RiStarSFill className="text-3xl" />}
+              text={<RiStarSFill className="text-xl" />}
             />
-          </Link>
+          </section>
         );
       })}
     </>

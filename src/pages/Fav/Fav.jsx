@@ -3,19 +3,17 @@ import Header from "../../components/Header/Header.jsx";
 import FavContainerList from "../../components/Fav/FavContainerList";
 
 const Fav = () => {
-  setInitColorTitle("black", "Trends");
+  setInitColorTitle("#191B2A", "Trends");
 
   return (
     <>
       <Header />
-      <main className="flex flex-grow flex-col px-4 py-3 overflow-x-hidden">
-        <section className="text-white">
-          <h2 className="text-3xl font-bold shadow-md text-center">
-            Favorites
-          </h2>
-          <section className="flex flex-col justify-center w-full px-2 py-2 lg:flex-row lg:justify-around lg:flex-wrap lg:gap-4">
-            <FavContainerList />
-          </section>
+      <main className="w-full h-full">
+        <h2 className="text-text text-center text-3xl font-bold">
+          Latest Movies
+        </h2>
+        <section className="flex flex-row flex-wrap w-full px-2 py-2">
+          <FavContainerList />
         </section>
       </main>
     </>

@@ -78,7 +78,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="text-text bg-secondary font-medium rounded-lg text-xl w-full px-5 py-3 text-center mt-4"
+            className="text-text bg-secondary border-text border-[1.2px] font-medium rounded-sm text-xl w-full px-5 py-3 text-center mt-4"
           >
             Login
           </button>

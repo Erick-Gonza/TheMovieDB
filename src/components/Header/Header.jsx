@@ -16,14 +16,14 @@ const Header = () => {
     setShowMenu(!showMenu);
   };
   return (
-    <header className="flex items-center justify-between xl:justify-start w-full py-4 px-8 h-[10vh] z-50">
+    <header className="flex bg-gradient-to-b to-main from-mainbg items-center justify-between xl:justify-start w-full py-4 px-8 h-[10vh] z-50">
       <div className="xl:w-1/6 text-center -mt-4">
         <Link to="/home" className="text-3xl font-bold relative p-1">
           <h2 className="text-text mt-4">MOVIESDB</h2>
         </Link>
       </div>
       <nav
-        className={`fixed bg-main w-[80%] md:w-[40%] xl:w-full h-full ${
+        className={`fixed bg-gradient-to-b to-main from-mainbg w-[80%] md:w-[40%] xl:w-full h-full ${
           showMenu ? "left-0" : "-left-full"
         } top-0 xl:static flex-1 flex flex-col xl:flex-row items-center justify-center gap-10 transition-all duration-500 z-50`}
       >
@@ -53,7 +53,7 @@ const Header = () => {
       </nav>
       <button
         onClick={toggleMenu}
-        className="xl:hidden text-4xl px-2 py-2 text-white"
+        className="xl:hidden text-4xl px-2 py-2 text-white fixed top-4 right-4"
       >
         {showMenu ? (
           <RiCloseLine className="text-red" />

@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch";
 import { favContext } from "../../context/FavContext";
 import Button from "../Button/button";
 import { RiStarSFill } from "react-icons/ri";
+import { isMobile } from "react-device-detect";
 
 const SeriesContainerList = ({ isPreview }) => {
   const { addToFavs } = useContext(favContext);
@@ -48,20 +49,33 @@ const SeriesContainerList = ({ isPreview }) => {
     <>
       {data?.results?.map((serie) => {
         return (
-          <Link
-            to={`/series/${serie.id}`}
-            key={serie?.id}
-            className="w-full lg:w-1/5 flex flex-col justify-center items-center bg-gray-800 px-3 py-4 rounded-xl mt-4 lg:m-2"
-          >
-            <section>
-              <img
-                src={`http://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                alt=""
-                className="rounded-lg"
-              />
-              <h2 className="text-center">{serie.name}</h2>
-            </section>
-          </Link>
+          <section className="relative w-1/2 max-h-1/2 px-2 py-1">
+            <Link
+              to={`/series/${serie?.id}`}
+              className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
+              key={serie?.id}
+            >
+              <section className="relative">
+                <h2 className="text-center text-lg text-text font-semibold">
+                  {isMobile
+                    ? `${serie?.name?.substring(0, 15)}...`
+                    : serie?.title}
+                </h2>
+                <img
+                  src={`http://image.tmdb.org/t/p/w500/${serie?.poster_path}`}
+                  alt=""
+                  className="rounded-lg"
+                />
+              </section>
+            </Link>
+            <Button
+              className={
+                "text-yellow-500 absolute left-3 bottom-2 px-1 py-1 rounded-full bg-mainbg z-20"
+              }
+              onClick={() => handleFav(serie)}
+              text={<RiStarSFill className="text-xl" />}
+            />
+          </section>
         );
       })}
     </>

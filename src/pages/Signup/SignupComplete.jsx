@@ -27,7 +27,7 @@ const SignupComplete = () => {
         <button
           onClick={handleComplete}
           type="submit"
-          className="text-text bg-secondary font-medium rounded-lg text-lg  w-1/2 px-5 py-3 text-center mt-4 mb-4 lg:text-2xl lg:w-1/6 "
+          className="text-text bg-secondary border-text border-[1.2px] font-medium rounded-sm text-lg  w-1/2 px-5 py-3 text-center mt-4 mb-4 lg:text-2xl lg:w-1/6 "
         >
           Continue
         </button>

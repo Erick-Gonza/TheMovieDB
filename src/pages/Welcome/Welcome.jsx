@@ -41,7 +41,7 @@ const Welcome = () => {
         <section className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 z-10">
           <Button
             className={
-              "bg-secondary px-4 py-3 border-main border-[1px] rounded-sm text-text text-xl font-semibold w-64 tracking-wider"
+              "bg-secondary px-4 py-3 border-text border-[1.2px] rounded-sm text-text text-xl font-semibold w-64 tracking-wider"
             }
             onClick={hanldeSignup}
             text={"Signup"}
@@ -49,7 +49,7 @@ const Welcome = () => {
 
           <Button
             className={
-              "bg-secondary px-4 py-3 border-main border-[1px] rounded-sm text-text text-xl font-semibold w-64 tracking-wider"
+              "bg-secondary border-text border-[1.2px] px-4 py-3 rounded-sm text-text text-xl font-semibold w-64 tracking-wider"
             }
             onClick={hanldeLogin}
             text={"Login"}
