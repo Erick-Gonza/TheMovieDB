@@ -9,7 +9,6 @@ module.exports = {
         mainbg: "#0A0B10",
         secondary: "#902913",
         text: "#F6F6F6",
-        paragraph: "#E1E1E1",
       },
     },
     plugins: [],

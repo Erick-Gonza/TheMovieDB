@@ -6,8 +6,7 @@ import { favContext } from "../../context/FavContext";
 import Button from "../Button/button";
 
 const FavContainerList = () => {
-  const { removeFromFavs } = useContext(favContext);
-  const { fav } = useContext(favContext);
+  const { fav, removeFromFavs } = useContext(favContext);
   const handleDeleteFav = (data) => {
     removeFromFavs(data);
   };
@@ -15,7 +14,7 @@ const FavContainerList = () => {
     <>
       {fav?.map((fav) => {
         return (
-          <section key={fav?.id} className="relative w-1/2 max-h-1/2 px-2 py-1">
+          <section className="relative w-1/2 max-h-1/2 px-2 py-1" key={fav?.id}>
             <Link
               to={`/favs/${fav.id}`}
               className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"

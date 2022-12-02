@@ -49,11 +49,13 @@ const SeriesContainerList = ({ isPreview }) => {
     <>
       {data?.results?.map((serie) => {
         return (
-          <section className="relative w-1/2 max-h-1/2 px-2 py-1">
+          <section
+            className="relative w-1/2 max-h-1/2 px-2 py-1"
+            key={serie?.id}
+          >
             <Link
               to={`/series/${serie?.id}`}
               className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
-              key={serie?.id}
             >
               <section className="relative">
                 <h2 className="text-center text-lg text-text font-semibold">

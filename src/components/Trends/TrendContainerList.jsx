@@ -56,27 +56,27 @@ const FavContainerList = ({ isPreview }) => {
     </>
   ) : (
     <>
-      {data?.results?.map((movie) => {
+      {data?.results?.map((trend) => {
         return (
           <section
             className="relative w-1/2 max-h-1/2 px-2 py-1"
-            key={movie?.id}
+            key={trend?.id}
           >
             <Link
-              to={`/movies/${movie.id}`}
+              to={`/trends/${trend.media_type}/${trend?.id}`}
               className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
             >
               <section className="relative">
                 <h2 className="text-center text-lg text-text font-semibold">
                   {isMobile
                     ? `${
-                        movie?.title?.substring(0, 15) ||
-                        movie?.name?.substring(0, 15)
+                        trend?.title?.substring(0, 15) ||
+                        trend?.name?.substring(0, 15)
                       }...`
-                    : movie?.title || movie?.name}
+                    : trend?.title || trend?.name}
                 </h2>
                 <img
-                  src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  src={`http://image.tmdb.org/t/p/w500/${trend.poster_path}`}
                   alt=""
                   className="rounded-lg"
                 />

@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         element: <Trend />,
       },
       {
-        path: "/trends/:type/:id",
+        path: "/trends/:media_type/:id",
         element: <TrendDetail />,
       },
       {

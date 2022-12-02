@@ -7,27 +7,40 @@ const SerieDetail = () => {
   const { id } = useParams();
   const baseUrl = `https://api.themoviedb.org/3/tv/${id}?api_key={API_KEY}&language=en-US`;
   const { data } = useFetch(baseUrl);
-  setInitColorTitle("black", `${data?.title}`);
+  setInitColorTitle("#191B2A", `${data?.name}`);
 
   return (
     <>
       <Header />
-      <main className="flex flex-col flex-grow justify-center items-center px-3 py-4 lg:overflow-x-hidden">
-        <h2 className="text-center text-white text-4xl font-bold p-2">
-          {data?.name}
-        </h2>
-        <section className="flex flex-col lg:flex-row px-4 py-2 bg-gray-700 rounded-xl w-3/4 lg:w-1/2">
+      <main className="w-full h-96 bg-gradient-to-b from-[#ffffff8f] to-[#191B2A]">
+        <section className="w-full h-full relative">
           <img
             src={`http://image.tmdb.org/t/p/w500/${data?.poster_path}`}
-            alt=""
-            className="rounded-lg"
+            className="rounded-sm object-cover w-full h-full mix-blend-overlay blur-[0.5px]"
           />
-          <section className="px-3 py-2 text-white text-xl flex flex-col items-center lg:items-start justify-evenly">
-            <p>Score: {data?.vote_average}</p>
-            <p>Status: {data?.status}</p>
-            <p>Budget: {data?.budget}</p>
-            <p>Release Date: {data?.release_date}</p>
-            <p>Description: {data?.overview}</p>
+          <h2 className="absolute bottom-4 left-2 text-2xl text-text font-bold tracking-wider">
+            {data?.name}
+          </h2>
+        </section>
+        <section className="text-text px-4 py-3">
+          <section className="flex gap-4 mb-1">
+            <p className="text-text font-semibold ">{data?.first_air_date}</p>
+            <p className="text-text font-semibold ">
+              {(data?.vote_average * 10).toFixed(2)}
+            </p>
+          </section>
+
+          <section className="w-full flex items-center gap-4 mb-1">
+            {data?.genres?.map((e) => (
+              <p className="text-text" key={e.id}>
+                {e.name}
+              </p>
+            ))}
+          </section>
+
+          <section className="">
+            <p className="text-text font-bold mb-1">{data?.tagline}</p>
+            <p className="text-text">{data?.overview}</p>
           </section>
         </section>
       </main>
