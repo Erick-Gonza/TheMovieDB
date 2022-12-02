@@ -3,7 +3,7 @@ import { isMobile } from "react-device-detect";
 import { RiCloseFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { favContext } from "../../context/FavContext";
-import Button from "../Button/button";
+import Button from "../Button/Button.jsx";
 
 const FavContainerList = () => {
   const { fav, removeFromFavs } = useContext(favContext);
