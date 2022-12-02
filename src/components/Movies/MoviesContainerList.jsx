@@ -24,7 +24,7 @@ const MoviesContainerList = ({ isPreview }) => {
               className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
             >
               <section className="relative">
-                <h2 className="text-left text-text font-semibold absolute bottom-1 left-1">
+                <h2 className="text-left text-text font-semibold absolute bottom-1 left-1 dark:text-black">
                   {movie.title}
                 </h2>
                 <img
@@ -58,7 +58,7 @@ const MoviesContainerList = ({ isPreview }) => {
               className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
             >
               <section className="relative">
-                <h2 className="text-center text-lg text-text font-semibold">
+                <h2 className="text-center text-lg text-text font-semibold dark:text-black">
                   {isMobile
                     ? `${movie.title.substring(0, 15)}...`
                     : movie.title}

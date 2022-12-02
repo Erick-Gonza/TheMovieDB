@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <main className="px-4 py-3">
+      <main className="px-4 py-3 dark:bg-white">
         <section className="w-full h-20">
           <Carousel
             className="-z-10"
@@ -23,21 +23,21 @@ const HomePage = () => {
         </section>
 
         <section className="px-2 py-3">
-          <h2 className="text-left text-text text-2xl font-bold">
+          <h2 className="text-left text-text text-2xl font-bold dark:bg-white dark:text-black">
             Latest Movies
           </h2>
           <MoviesContainerList isPreview={true} />
         </section>
 
         <section className="px-2 py-3">
-          <h2 className="text-left text-text text-2xl font-bold">
+          <h2 className="text-left text-text text-2xl font-bold dark:bg-white dark:text-black">
             Latest Series
           </h2>
           <SeriesContainerList isPreview={true} />
         </section>
 
         <section className="px-2 py-3">
-          <h2 className="text-left text-text text-2xl font-bold">
+          <h2 className="text-left text-text text-2xl font-bold dark:bg-white dark:text-black">
             Trends today
           </h2>
           <TrendContainerList isPreview={true} />

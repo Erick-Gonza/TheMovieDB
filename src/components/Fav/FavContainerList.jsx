@@ -20,7 +20,7 @@ const FavContainerList = () => {
               className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
             >
               <section className="relative">
-                <h2 className="text-center text-lg text-text font-semibold">
+                <h2 className="text-center text-lg text-text font-semibold dark:text-black">
                   {isMobile
                     ? `${
                         fav?.title?.substring(0, 15) ||

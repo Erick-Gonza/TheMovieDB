@@ -7,8 +7,8 @@ const Movies = () => {
   return (
     <>
       <Header />
-      <main className="w-full h-full">
-        <h2 className="text-text text-center text-3xl font-bold">
+      <main className="w-full h-auto flex flex-col flex-grow dark:bg-white">
+        <h2 className="text-text text-center text-3xl font-bold dark:text-black">
           Latest Movies
         </h2>
         <section className="flex flex-row flex-wrap w-full px-2 py-2">

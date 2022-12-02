@@ -25,7 +25,7 @@ const FavContainerList = ({ isPreview }) => {
               <section className="relative">
                 {trend?.media_type === "movie" ? (
                   <>
-                    <h2 className="text-left text-text font-semibold absolute bottom-1 left-1">
+                    <h2 className="text-left text-text font-semibold absolute bottom-1 left-1 dark:text-black">
                       {trend?.title}
                     </h2>
                   </>
@@ -67,7 +67,7 @@ const FavContainerList = ({ isPreview }) => {
               className="w-full lg:w-1/5 flex flex-col justify-center items-center mt-4 lg:m-2"
             >
               <section className="relative">
-                <h2 className="text-center text-lg text-text font-semibold">
+                <h2 className="text-center text-lg text-text font-semibold dark:text-black">
                   {isMobile
                     ? `${
                         trend?.title?.substring(0, 15) ||
