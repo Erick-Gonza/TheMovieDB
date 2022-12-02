@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button/button";
+import Button from "../../components/Button/Button.jsx";
 import { userContext } from "../../context/UserContext";
 import { setInitColorTitle } from "../../utils/Utilities";
 import HeaderPage from "../../components/Header/HeaderPage";
