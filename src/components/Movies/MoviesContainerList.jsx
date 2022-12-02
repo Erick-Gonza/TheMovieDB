@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { RiStarSFill } from "react-icons/ri";
-import Button from "../Button/button";
+import Button from "../Button/Button.jsx";
 import { favContext } from "../../context/FavContext";
 import { isMobile } from "react-device-detect";
 
