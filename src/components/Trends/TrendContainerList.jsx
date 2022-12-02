@@ -15,7 +15,7 @@ const FavContainerList = ({ isPreview }) => {
   };
   return isPreview ? (
     <>
-      <section className="flex flex-col lg:flex-row">
+      <section className="flex flex-col lg:flex-row lg:justify-around">
         {data?.results?.slice(0, 4).map((trend) => {
           return (
             <section className="relative" key={trend?.id}>
